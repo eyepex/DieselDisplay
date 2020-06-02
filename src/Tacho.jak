@@ -1,0 +1,33 @@
+
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+
+SoUrCe RooT Tacho "../features/Tacho/Tacho.jak";
+/**
+ * TODO description
+ */
+public class Tacho extends JPanel implements Listener {
+
+	Car car;
+	double speed = 0.0;
+	JLabel speedInfo = new JLabel();
+	
+	Tacho(Car car){
+		super();
+		this.car = car;
+		car.listen(this);
+		inform();
+		addUIElements();
+	}
+	
+	public void inform() {
+		speed = car.getSpeed();
+		this.speedInfo.setText(String.valueOf(speed));
+	}
+	
+	private void addUIElements() {
+		JLabel header = new JLabel("Speed:");
+		this.add(header);
+		this.add(speedInfo);
+	}
+}

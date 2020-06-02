@@ -1,0 +1,77 @@
+
+import java.awt.Color;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+SoUrCe RooT Base "../features/Base/DieselDisplay.jak";
+
+/**
+ * TODO description
+ */
+abstract class DieselDisplay$$Base extends JFrame {
+
+	Car car;
+	public static void main(String[] args) {
+		Car car = new Car();
+		DieselDisplay meinJFrame = new DieselDisplay(car);
+        meinJFrame.setVisible(true);
+	}
+	
+	DieselDisplay$$Base(Car car){
+		super();
+		this.car = car;
+		setTitle("Display Steuerung fuer Auto");
+        setLayout(new GridLayout(0,1));
+        addPanels();
+        pack();
+		
+	}
+	
+	public void addPanels() {
+	}
+	
+	
+	
+}
+
+SoUrCe  Tacho "../features/Tacho/DieselDisplay.jak";/**
+ * TODO description
+ */
+abstract class DieselDisplay$$Tacho extends  DieselDisplay$$Base  {
+
+	
+	public void addPanels() {
+		super.addPanels();
+		JPanel tacho = new Tacho(car);
+	    this.add(tacho);
+	}
+}
+
+SoUrCe  Motorsteuerung "../features/Motorsteuerung/DieselDisplay.jak";/**
+ * TODO description
+ */
+abstract class DieselDisplay$$Motorsteuerung extends  DieselDisplay$$Tacho  {
+	
+	public void addPanels() {
+		super.addPanels();
+		JPanel panelsc = new PanelSpeedControl(car);
+	    this.add(panelsc); 
+		JPanel panelmc = new PanelMotorControl(car);
+	    this.add(panelmc); 
+	}
+}
+
+SoUrCe  Innenausstattung "../features/Innenausstattung/DieselDisplay.jak";/**
+ * TODO description
+ */
+public class DieselDisplay extends  DieselDisplay$$Motorsteuerung  {
+
+	public void addPanels() {
+		super.addPanels();
+		JPanel panel = new PanelInnenausstattung();
+	    this.add(panel);
+	}
+	
+}

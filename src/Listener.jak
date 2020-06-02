@@ -1,0 +1,6 @@
+
+
+SoUrCe RooT Base "../features/Base/Listener.jak";public interface Listener {
+
+	void inform();
+}
