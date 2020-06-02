@@ -1,0 +1,12 @@
+/**
+ * TODO description
+ */
+public refines class DieselDisplay {
+
+	public void addPanels() {
+		super.addPanels();
+		JPanel panel = new PanelInnenausstattung();
+	    this.add(panel);
+	}
+	
+}

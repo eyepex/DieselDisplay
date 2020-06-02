@@ -1,0 +1,14 @@
+/**
+ * TODO description
+ */
+public refines class PruefStatus {
+	int[] sollHistorie = {0,0,1,2,3,4,5,6,7,8,6,4,2,0};
+	
+	public void checkForSafeCorridor() {
+		super.checkForSafeCorridor();
+		if(step<sollHistorie.length && 
+				sollHistorie[this.step] == this.istHistorie[this.step]) {
+			this.isPruef |= true;
+		}
+	}
+}

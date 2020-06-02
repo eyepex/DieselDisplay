@@ -1,0 +1,23 @@
+
+import javax.swing.JPanel;
+import javax.swing.JScrollBar;
+import javax.swing.JLabel;
+/**
+ * TODO description
+ */
+public class PanelRadio extends JPanel{
+	
+	PanelRadio(){
+		addUIElements();
+	}
+
+	void addUIElements() {
+		JPanel radio = new JPanel();
+		JLabel radioheader = new JLabel("Radio:");
+		radio.add(radioheader);
+		JScrollBar radioset = new JScrollBar(JScrollBar.HORIZONTAL);//VERTICAL);
+		radio.add(radioset);
+		this.add(radio);
+	}
+	
+}

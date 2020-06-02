@@ -1,0 +1,11 @@
+/**
+ * TODO description
+ */
+public refines class DieselDisplay {
+
+	public void addPanels() {
+		super.addPanels();
+		JPanel panelNavi = new PanelNavi();
+	    this.add(panelNavi);
+	}
+}

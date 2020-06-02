@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="DieselDisplay"/>
+	<feature automatic="selected" name="Base"/>
+	<feature manual="selected" name="Tacho"/>
+	<feature automatic="selected" name="Motorsteuerung"/>
+	<feature manual="selected" name="Benziner"/>
+	<feature automatic="unselected" name="Diesel"/>
+	<feature automatic="unselected" name="EU"/>
+	<feature automatic="unselected" name="US"/>
+	<feature automatic="unselected" name="other"/>
+	<feature automatic="selected" name="Innenausstattung"/>
+	<feature name="Klima"/>
+	<feature name="Navi"/>
+	<feature name="Radio"/>
+</configuration>

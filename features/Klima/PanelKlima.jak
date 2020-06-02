@@ -1,0 +1,23 @@
+
+import javax.swing.JPanel;
+import javax.swing.JScrollBar;
+import javax.swing.JLabel;
+/**
+ * TODO description
+ */
+public class PanelKlima extends JPanel{
+
+	PanelKlima(){
+		addUIElements();
+	}
+
+	void addUIElements() {
+		JPanel klima = new JPanel();
+		JLabel klimaheader = new JLabel("Klima");
+		klima.add(klimaheader);
+		JScrollBar klimaset = new JScrollBar(JScrollBar.HORIZONTAL);//VERTICAL);
+		klima.add(klimaset);
+		this.add(klima);
+	}
+	
+}

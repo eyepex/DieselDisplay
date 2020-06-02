@@ -1,0 +1,14 @@
+
+import javax.swing.JLabel;
+/**
+ * TODO description
+ */
+public refines class PanelMotorControl {
+
+	
+	void addUIElements() {
+		this.startText = "Anlassen!";
+		super.addUIElements();
+	}
+	
+}

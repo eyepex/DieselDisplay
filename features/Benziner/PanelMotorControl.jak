@@ -1,0 +1,10 @@
+/**
+ * TODO description
+ */
+public refines class PanelMotorControl {
+
+	void addUIElements() {
+		this.startText = "Zünden!";
+		super.addUIElements();
+	}
+}

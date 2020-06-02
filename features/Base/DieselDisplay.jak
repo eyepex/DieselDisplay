@@ -1,0 +1,35 @@
+
+import java.awt.Color;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+/**
+ * TODO description
+ */
+public class DieselDisplay extends JFrame {
+
+	Car car;
+	public static void main(String[] args) {
+		Car car = new Car();
+		DieselDisplay meinJFrame = new DieselDisplay(car);
+        meinJFrame.setVisible(true);
+	}
+	
+	DieselDisplay(Car car){
+		super();
+		this.car = car;
+		setTitle("Display Steuerung fuer Auto");
+        setLayout(new GridLayout(0,1));
+        addPanels();
+        pack();
+		
+	}
+	
+	public void addPanels() {
+	}
+	
+	
+	
+}

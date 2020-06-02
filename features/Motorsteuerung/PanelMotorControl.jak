@@ -1,0 +1,48 @@
+
+
+import javax.swing.JPanel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+
+/**
+ * TODO description
+ */
+public class PanelMotorControl  extends JPanel {
+	
+	Car car;
+	String startText = "Start!";
+	JButton buttonStart = new JButton(startText);
+	
+	PanelMotorControl(Car car){
+		super();
+		this.car = car;
+		addUIElements();
+	}
+	
+	void addUIElements() {
+		buttonStart.setText(startText);
+		buttonStart.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(car.isAn()) {
+					car.setAn(false);
+				} else {
+					car.setAn(true);
+				}
+				toggleButtonText();
+			}
+		});
+        this.add(buttonStart);
+	}
+	
+	void toggleButtonText() {
+		if(car.isAn()) buttonStart.setText("Aus!");
+		else buttonStart.setText(startText);
+	}
+	
+	
+}

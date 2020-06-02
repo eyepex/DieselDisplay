@@ -1,0 +1,12 @@
+/**
+ * TODO description
+ */
+public refines class DieselDisplay {
+
+	
+	public void addPanels() {
+		super.addPanels();
+		JPanel tacho = new Tacho(car);
+	    this.add(tacho);
+	}
+}

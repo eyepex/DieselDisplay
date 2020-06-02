@@ -1,0 +1,8 @@
+/**
+ * TODO description
+ */
+public refines class PruefStatus {
+	public void checkForSafeCorridor() {
+		if(this.step < 20) this.isPruef |= true;
+	}
+}

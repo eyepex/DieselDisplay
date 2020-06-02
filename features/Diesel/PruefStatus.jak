@@ -1,0 +1,40 @@
+/**
+ * TODO description
+ */
+public class PruefStatus implements Listener{
+	int[] sollHistorie = new int[20];
+	int[] istHistorie = new int[20];
+	int step = 0;
+	
+	boolean isPruef = true;
+	Car car;
+	Listener panel; 
+	
+	PruefStatus(Car car, Listener panel){
+		this.car = car;
+		this.panel = panel;
+		car.listen2(this);
+	}
+	
+	boolean isPruef() {
+		return isPruef;
+	}
+	
+	public void inform() {
+		step++;
+		if(step < istHistorie.length) istHistorie[step] = this.car.getSpeed();
+		if(isPruef) checkForSafeCorridor();
+		
+		//reset bei Neustart.
+		if(!car.isAn()) {
+			isPruef |= true;
+			step = 0;
+		}
+		panel.inform();
+	}
+	
+	public void checkForSafeCorridor() {
+		isPruef = false;
+		//EntryPoint
+	}
+}

@@ -1,0 +1,13 @@
+/**
+ * TODO description
+ */
+public refines class DieselDisplay {
+	
+	public void addPanels() {
+		super.addPanels();
+		JPanel panelsc = new PanelSpeedControl(car);
+	    this.add(panelsc); 
+		JPanel panelmc = new PanelMotorControl(car);
+	    this.add(panelmc); 
+	}
+}

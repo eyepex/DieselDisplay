@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="DieselDisplay">
+			<and mandatory="true" name="Base">
+				<description>HauptAnsicht, was die anderen Ansichten enthält.</description>
+				<graphics key="collapsed" value="false"/>
+				<feature name="Tacho">
+					<description>
+						Geschwindigkeitsanzeige in kmh.&#13;
+						Koennte man auch noch Laenderabhaengig machen. US-Meilen
+					</description>
+				</feature>
+				<alt mandatory="true" name="Motorsteuerung">
+					<description>
+						Hier wird das Anlassen des Motors per Knopfdruck verwaltet.&#13;
+						Vorher muss allerdings eingstellt werden, ob sich der Wagen evtl auf dem Pruefstand befindet.
+					</description>
+					<graphics key="collapsed" value="false"/>
+					<feature name="Benziner">
+						<description>Wenn Benziner, dann keine Abgasmaniplulation. Also ohne weiteres zum Anlassen.</description>
+					</feature>
+					<or name="Diesel">
+						<description>Wenn der Motor ein Diesel ist, dann koennen wir abgas-manipulieren.</description>
+						<graphics key="collapsed" value="false"/>
+						<feature name="EU">
+							<description>Hier werden die EU-Richtlinien fuer den Pruefstand beruecksichtigt.</description>
+						</feature>
+						<feature name="US">
+							<description>Hier werden die US-Richtlinien fuer den Pruefstand beruecksichtigt.</description>
+						</feature>
+						<feature name="other">
+							<description>Hier werden andere Richtlinien fuer den Pruefstand beruecksichtigt.</description>
+						</feature>
+					</or>
+				</alt>
+				<and mandatory="true" name="Innenausstattung">
+					<description>Kontrolle von Heizung, Lueftung und optionaler Features.</description>
+					<feature name="Klima">
+						<description>Steuerung der Klimaanlage</description>
+					</feature>
+					<feature name="Navi">
+						<description>Wenn Navi inclusive, dann wird hier die Steuerung verwaltet.</description>
+					</feature>
+					<feature name="Radio">
+						<description>Fast alle Autos haben ein Radio. Allerdings wollen manche Kunden ein eigenes einbauen.</description>
+					</feature>
+				</and>
+			</and>
+		</and>
+	</struct>
+</featureModel>

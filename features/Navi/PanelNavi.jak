@@ -1,0 +1,24 @@
+
+import javax.swing.JPanel;
+import java.awt.Color;
+import javax.swing.JLabel;
+/**
+ * TODO description
+ */
+public class PanelNavi extends JPanel{
+	
+	PanelNavi(){
+		addUIElements();
+	}
+
+	void addUIElements() {
+		JPanel navi = new JPanel();
+		JLabel naviheader = new JLabel("Navi:");
+		navi.add(naviheader);
+		JPanel naviset = new JPanel();
+		naviset.setBackground(Color.GREEN);
+		navi.add(naviset);
+		this.add(navi);
+	}
+	
+}
